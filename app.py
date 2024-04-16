@@ -77,7 +77,7 @@ def handle_message(event):
     elif"什麼是" in event.message.text:
         cmd=event.message.text.split("是")
         try:
-         q_string = {'tbm': 'isch', 'q': cmd[1]}
+         q_string = {'tbm': 'isch', 'q': cmd[0]}
          url = f"https://www.google.com/search?{urllib.parse.urlencode(q_string)}/"
          headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'}
 
