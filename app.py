@@ -109,7 +109,7 @@ def handle_message(event):
     else:
          q_string = {'tbm': 'isch', 'q': cmd[1]}
          url = f"https://www.google.com/search?{urllib.parse.urlencode(q_string)}/"
-        Sendstring=event.message.text
+        #Sendstring=event.message.text
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=url))
