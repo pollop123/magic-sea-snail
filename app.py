@@ -3,7 +3,6 @@ from readline import insert_text
 from this import s
 from flask import Flask, request, abort
 import requests
-from gtts import gTTS
 import json
 import urllib
 import re
