@@ -107,10 +107,12 @@ def handle_message(event):
          event.reply_token,
          TextSendMessage(text="我....我也不知道"))
     else:
+         q_string = {'tbm': 'isch', 'q': cmd[1]}
+         url = f"https://www.google.com/search?{urllib.parse.urlencode(q_string)}/"
         Sendstring=event.message.text
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=Sendstring))
+        TextSendMessage(text=url))
 def places():
     placeslist=["南樓","北樓","中正樓"]
     return placeslist[random.randint(0,len(placeslist)-1)]
