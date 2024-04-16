@@ -106,13 +106,6 @@ def handle_message(event):
          line_bot_api.reply_message(
          event.reply_token,
          TextSendMessage(text="我....我也不知道"))
-    elif"天氣" in event.message.text:
-        weather=event.message.text.split(" ")
-        city = weather[1]
-        city = city.replace('台','臺')
-        line_bot_api.reply_message(event.reply_token, TextSendMessage)(
-        text=city+"的我不知道"
-        )
     else:
         Sendstring=event.message.text
     line_bot_api.reply_message(
