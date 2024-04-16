@@ -103,16 +103,17 @@ def handle_message(event):
          preview_image_url=random_img_url)
          )
         except:
-         line_bot_api.reply_message(
-         event.reply_token,
-         TextSendMessage(text="我....我也不知道"))
-    else:
          q_string = {'tbm': 'isch', 'q': cmd[1]}
          url = f"https://www.google.com/search?{urllib.parse.urlencode(q_string)}/"
-        #Sendstring=event.message.text
+         line_bot_api.reply_message(
+         event.reply_token,
+         TextSendMessage(text=url))
+    else:
+        Sendstring=event.message.text
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=url))
+        TextSendMessage(text=Sendstring))
+    
 def places():
     placeslist=["南樓","北樓","中正樓"]
     return placeslist[random.randint(0,len(placeslist)-1)]
