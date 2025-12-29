@@ -6,6 +6,7 @@ import requests
 import json
 import urllib
 import re
+import os
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -20,8 +21,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('***REMOVED***')
-handler = WebhookHandler('***REMOVED***')
+line_bot_api = LineBotApi(os.environ['LINE_ACCESS_TOKEN'])
+handler = WebhookHandler(os.environ['LINE_CHANNEL_SECRET'])
 
 
 @app.route("/callback", methods=['POST'])
